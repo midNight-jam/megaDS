@@ -3,10 +3,10 @@ package com.darkRealm.BST;
 /**
  * Created by Jayam on 8/21/2016.
  */
-public class IntTreeElement <Data> implements ITreeElement {
+public class IntTreeElement implements ITreeElement {
     IntTreeElement _left;
     IntTreeElement _right;
-    int _data;// try making it templatized
+    int _data;
 
     public int get_data() {
         return _data;
