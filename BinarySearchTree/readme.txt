@@ -1,1 +1,2 @@
-This is a BST, with a interface contract. A class to be part of the BST shall implement ITreeElement.
+This is a genericBST, with a ITreeElement interface contract. 
+A class to be part of the BST shall implement ITreeElement.
