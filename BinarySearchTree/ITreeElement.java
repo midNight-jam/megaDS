@@ -14,5 +14,7 @@ public interface ITreeElement {
 
     int getData();
 
+    void setData(int data);
+
     boolean isLeaf();
 }

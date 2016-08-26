@@ -46,6 +46,75 @@ public class BinarySearchTreeGeneric <E extends ITreeElement> implements IBinary
     }
 
     @Override
+    public void delete(ITreeElement node) {
+        if (!isEmpty()) {
+            deleteElement(null, _root, node);
+        }
+    }
+
+    private void deleteElement(ITreeElement par,ITreeElement current, ITreeElement node) {
+        //Data found, perform deletion...
+        if (current.getData() == node.getData()) {
+            //  Only one child
+//            if (current.getData() == _root.getData()) {//Single Element
+//                _root = null;
+//            }
+            if (current.isLeaf()) {
+                if (current.getData() < par.getData()) {
+                    par.setLeft(null);
+                    return;
+                } else {
+                    par.setRight(null);
+                    return;
+                }
+            }
+            // Only LEFT child
+            if (current.getLeft() != null && current.getRight() == null) {
+                if (current.getData() < par.getData()) {
+                    par.setLeft(current.getLeft());
+                    return;
+                } else {
+                    par.setRight(current.getLeft());
+                }
+            }
+            // only Right child
+            if (current.getLeft() == null && current.getRight() != null) {
+                if (current.getData() < par.getData()) {
+                    par.setLeft(current.getRight());
+                    return;
+                } else {
+                    par.setRight(current.getRight());
+                }
+            }
+            // Two Childs, find the left most data in the right side to replace with the deleting node.
+            else {
+                ITreeElement tempPar = current;
+                ITreeElement temp = current.getRight();
+                while (temp.getLeft() != null) {
+                    tempPar = temp;
+                    temp = temp.getLeft();
+                }
+                //update current, with left most
+                current.setData(temp.getData());
+                // update the pointers of the actual delting node
+                if (temp.isLeaf()) {
+                    tempPar.setLeft(null);
+                    return;
+                } else {
+                    tempPar.setLeft(temp.getRight());
+                    return;
+                }
+            }
+        }
+        // find data recursively...
+        if (node.getData() < current.getData()) {
+            deleteElement(current, current.getLeft(), node);
+        } else {
+            deleteElement(current, current.getRight(), node);
+        }
+    }
+
+    @Override
     public void printInorder() {
         if (!isEmpty()) {
             printInorderNode(_root);

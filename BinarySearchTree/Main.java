@@ -10,23 +10,38 @@ public class Main {
         // write your code here
 
         BinarySearchTreeGeneric<IntTreeElement> bst = new BinarySearchTreeGeneric<>();
-        ITreeElement n1, n2, n3, n4;
-        n1 = new IntTreeElement(100);
-        n2 = new IntTreeElement(75);
-        n3 = new IntTreeElement(125);
-        n4 = new IntTreeElement(50);
+        ITreeElement arr[] = new IntTreeElement[]{
+                new IntTreeElement(100),
+                new IntTreeElement(75),
+                new IntTreeElement(125),
+                new IntTreeElement(50),
+                new IntTreeElement(90),
+                new IntTreeElement(25),
+                new IntTreeElement(110),
+                new IntTreeElement(104),
+                new IntTreeElement(111),
+                new IntTreeElement(105),
+                new IntTreeElement(102),
+                new IntTreeElement(150),
+                new IntTreeElement(135),
+                new IntTreeElement(103)
+        };
 
-        bst.insert(n1);
-        bst.insert(n2);
-        bst.insert(n3);
-        bst.insert(n4);
+        for (int i = 0; i < arr.length; i++) {
+            bst.insert(arr[i]);
+        }
 
         bst.printInorder();
         System.out.println("\nHeight is " + bst.getHeight());
 
         bst.prettyPrintLevelOrder();
-        bst.delete(n4);
-        System.out.println("\nAfter 50 delete");
+        bst.delete(arr[2]);
+        System.out.println("\nAfter 125 delete");
+        bst.prettyPrintLevelOrder();
+
+
+        bst.delete(arr[0]);
+        System.out.println("\nAfter 100 delete");
         bst.prettyPrintLevelOrder();
     }
 }

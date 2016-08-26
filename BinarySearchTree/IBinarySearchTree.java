@@ -14,4 +14,6 @@ public interface IBinarySearchTree <E extends ITreeElement > {
     int getHeight();
 
     void prettyPrintLevelOrder();
+
+    void delete(E node);
 }
