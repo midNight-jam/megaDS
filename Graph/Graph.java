@@ -27,7 +27,7 @@ public class Graph implements IGraph {
     }
 
     @Override
-    public void doDepthFirst() {
+    public void doDepthFirstTraversal() {
         resetVeterxStatuses(); // reset Statuses
         //push first vertex in stack & make its status as pushed
         Vertex vertex = _vertices[0];
@@ -55,7 +55,7 @@ public class Graph implements IGraph {
     }
 
     @Override
-    public void doBreadthFirst() {
+    public void doBreadthFirstTraversal() {
         resetVeterxStatuses();
         Queue queue = new Queue<IntQueElement>(_noOfVertices);
         Vertex vertex = _vertices[0];
