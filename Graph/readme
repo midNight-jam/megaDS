@@ -1,0 +1,2 @@
+This is just a graph, with dfs+bfs functionality.
+The graph would be maintained with a adjacency matrix, rather than adjacency list.
