@@ -1,0 +1,2 @@
+This is a Queue implementation, with a IQueue contract.
+For types to participate in Queue, they must implement the IQueueElement contract.
