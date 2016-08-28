@@ -7,4 +7,6 @@ public interface IGraph {
     void doDepthFirst();
 
     void doBreadthFirst();
+
+    void resetVeterxStatuses();
 }
