@@ -4,8 +4,9 @@ package com.darkRealm;
  * Created by Jayam on 9/4/16.
  *
  * Array representation of Tree
- * Parent n == will have childs at 2n+1 & 2n+2
- * Children n == will have its parent at int rounded down (n-1)/2
+ * Parent n if begins from index 1 == will have childs at 2n & 2n+1,
+ * thats why
+ * Children n == will have its parent at int rounded down n/2 or (n-1)/2
  */
 public class MaxHeap implements IHeap {
 
