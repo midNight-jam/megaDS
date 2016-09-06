@@ -1,5 +1,6 @@
 package com.darkRealm;
 
+import com.darkRealm.ArrayList.ArrayList;
 import com.darkRealm.BST.BinarySearchTreeGeneric;
 import com.darkRealm.BST.ITreeElement;
 import com.darkRealm.BST.IntTreeElement;
@@ -7,14 +8,27 @@ import com.darkRealm.Graph.Graph;
 import com.darkRealm.Queue.IntQueElement;
 import com.darkRealm.Queue.Queue;
 import com.darkRealm.Stack.Stack;
+import com.darkRealm.Trie.Trie;
 
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        doGraph();
+//        doGraph();
 //        doStack();
 //        doQueue();
+//        doArrayList();
+        doTrie();
+    }
+
+
+    public static void doTrie() {
+        Trie trie = new Trie();
+        trie.insert("ace");
+        trie.insert("act");
+        boolean res = trie.search("act");
+        System.out.println("searching act in trie : "+res);
+        System.out.println("searching acv in trie : "+trie.search("acv"));
     }
 
     public static void BST() {
@@ -110,6 +124,14 @@ public class Main {
         que.insert(new IntQueElement(66));
         que.insert(new IntQueElement(77));
         que.showQue();
+    }
+
+    public static void doArrayList(){
+        ArrayList arrayList = new ArrayList<Character>();
+        arrayList.add('a');
+        arrayList.add('b');
+        arrayList.add('c');
+        arrayList.add('d');
     }
 }
 
