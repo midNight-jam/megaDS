@@ -6,6 +6,7 @@ package com.darkRealm.Trie;
 public class Trie {
 
     TrieNode _root;
+    private final int _childsSize = 26;
 
     public Trie() {
         _root = new TrieNode();
@@ -63,5 +64,20 @@ public class Trie {
             return true;
         }
         return false;
+    }
+
+    public void doPrint() {
+        print(_root);
+    }
+
+    private void print(TrieNode trav) {
+        if (trav != null) {
+            if (trav._value != "") {
+                System.out.println("Value : " + trav._value);
+            }
+            for (int i = 0; i < _childsSize; i++) {
+                print(trav._childs[i]);
+            }
+        }
     }
 }
