@@ -25,10 +25,14 @@ public class Main {
     public static void doTrie() {
         Trie trie = new Trie();
         trie.insert("ace");
+        trie.insert("acer");
         trie.insert("act");
-        boolean res = trie.search("act");
+        boolean res = trie.search("acer");
         System.out.println("searching act in trie : "+res);
         System.out.println("searching acv in trie : "+trie.search("acv"));
+        System.out.println("Printing trie : " );
+        trie.doPrint();
+
     }
 
     public static void BST() {
