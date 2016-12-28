@@ -6,12 +6,11 @@ import com.darkRealm.BST.ITreeElement;
 import com.darkRealm.BST.IntTreeElement;
 import com.darkRealm.Graph.Graph;
 import com.darkRealm.HashMap.MyHashMap;
-import com.darkRealm.Heap.Heap;
+import com.darkRealm.Heap.MinHeap;
 import com.darkRealm.Queue.IntQueElement;
 import com.darkRealm.Queue.Queue;
 import com.darkRealm.SinglyLinkedList.SinglyLinkedList;
 import com.darkRealm.Stack.Stack;
-import com.darkRealm.StringBuilder.JStringBuilder;
 import com.darkRealm.Trie.Trie;
 
 import java.util.HashMap;
@@ -183,14 +182,14 @@ public class Main {
   }
 
   public static void doHeap() {
-    Heap heap = new Heap(5);
-    heap.insert(3);
-    heap.insert(6);
-    heap.insert(4);
-    heap.insert(5);
-    heap.insert(1);
-    while (!heap.isEmpty()) {
-      System.out.print(heap.fetchTop()+" ");
+    MinHeap minHeap = new MinHeap(5);
+    minHeap.insert(3);
+    minHeap.insert(6);
+    minHeap.insert(4);
+    minHeap.insert(5);
+    minHeap.insert(1);
+    while (!minHeap.isEmpty()) {
+      System.out.print(minHeap.fetchTop()+" ");
     }
   }
 }

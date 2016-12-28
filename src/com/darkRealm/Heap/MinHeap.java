@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * Created by Jayam on 12/27/2016.
  */
-public class Heap {
+public class MinHeap {
   //Min heap
   private int[] heap;
   private int heapCount;
 
-  public Heap(int size) {
+  public MinHeap(int size) {
     heap = new int[size + 1];
     heapCount =0;
   }
@@ -22,7 +22,7 @@ public class Heap {
     //insert the new item to the last of heap (end of the array) and SIFT UP
     int pos = ++heapCount;
     heap[heapCount] = data;
-    // checking for less than beacuse its a MIN Heap
+    // checking for less than beacuse its a MIN MinHeap
     while ((pos > 1) && data < heap[pos / 2]) {
       heap[pos] = heap[pos / 2];  // bringing the parent down to make room for new data
       pos = pos / 2;  // moving to another parent
