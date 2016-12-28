@@ -11,6 +11,7 @@ import com.darkRealm.Queue.IntQueElement;
 import com.darkRealm.Queue.Queue;
 import com.darkRealm.SinglyLinkedList.SinglyLinkedList;
 import com.darkRealm.Stack.Stack;
+import com.darkRealm.StringBuilder.JStringBuilder;
 import com.darkRealm.Trie.Trie;
 
 import java.util.HashMap;
@@ -25,10 +26,10 @@ public class Main {
 //        doArrayList();
 //        doTrie();
 //            BST();
-//        doStringBuilder();
+        doStringBuilder();
 //    doLinkedList();
 //    doSortByKey_Values();
-    doHeap();
+//    doHeap();
   }
 
   public static void doTrie() {
@@ -153,12 +154,9 @@ public class Main {
 
         System.arraycopy(s1,0,s2,0,3);
         s2.toString();*/
-    StringBuilder s = new StringBuilder();
-//        //s.append("a");
-    //StringBuilder sb = new StringBuilder();
-    //sb.append("abc");
-    //sb.append("123456");
-
+    JStringBuilder sb = new JStringBuilder();
+    sb.append("abc");
+    sb.append("123456");
   }
 
   public static void doLinkedList() {
@@ -188,6 +186,9 @@ public class Main {
     minHeap.insert(4);
     minHeap.insert(5);
     minHeap.insert(1);
+    minHeap.insert(9);
+    minHeap.insert(0);
+    minHeap.insert(7);
     while (!minHeap.isEmpty()) {
       System.out.print(minHeap.fetchTop()+" ");
     }
